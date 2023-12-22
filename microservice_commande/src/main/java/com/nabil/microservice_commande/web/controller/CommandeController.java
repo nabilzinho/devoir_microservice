@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -28,9 +29,14 @@ public class CommandeController implements HealthIndicator {
         List<Commande> Commandes = commandedao.findAll();
         if (Commandes.isEmpty())
             throw new CommandeNotFoundException("Aucun produit n'est disponible à la vente");
-                    List<Commande> listeLimitee = Commandes.subList(0,
-                            appProperties.getLimitDeProduits());
-        return listeLimitee;
+        LocalDate tenDaysAgo = LocalDate.now().minusDays(appProperties.getCommandes_last());
+
+        // Retrieve commands from the last 10 days
+        List<Commande> commandesLast10Days = commandedao.findByDateAfter(tenDaysAgo);
+
+        return commandesLast10Days;
+
+
     }
 
     // Supprimer un produit par son id
