@@ -18,6 +18,7 @@ public class Commande {
     private LocalDate date;
     private Integer quantite;
     private Double montant;
+    private Integer product_id;
 
 
 }
