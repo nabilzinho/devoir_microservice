@@ -8,11 +8,11 @@
 		<version>2.5.10</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.nabil</groupId>
-	<artifactId>microservice_commande</artifactId>
+	<groupId>com.mcommerce</groupId>
+	<artifactId>microservice-produits</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>microservice_commande</name>
-	<description>microservice_commande</description>
+	<name>microservice-produits</name>
+	<description>microservice-produits</description>
 	<properties>
 		<java.version>17</java.version>
 		<spring-cloud.version>2020.0.3</spring-cloud.version> <!-- Use the latest stable version -->
