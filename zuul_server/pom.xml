@@ -41,7 +41,13 @@
         been defined -->
         <dependency><groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-bootstrap</artifactId><version>4.0.4</version>
-        </dependency></dependencies>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.tomcat.embed</groupId>
+            <artifactId>tomcat-embed-core</artifactId>
+            <version>9.0.82</version>
+        </dependency>
+    </dependencies>
     <dependencyManagement>
         <dependencies>
             <dependency>
