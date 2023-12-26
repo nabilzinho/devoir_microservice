@@ -12,6 +12,6 @@ import org.springframework.stereotype.Component;
 @RefreshScope
 public class ApplicationPropertiesConfiguration {
     // correspond à la propriété « mes-configs.limitDeProduits » dans le fichier de configuration du MS
-    private int commandes_last;
+    private Integer commandes_last;
 
 }
