@@ -29,11 +29,10 @@ public class CommandeController implements HealthIndicator {
         List<Commande> Commandes = commandedao.findAll();
         if (Commandes.isEmpty())
             throw new CommandeNotFoundException("Aucun Commande n'est disponible à la vente");
-        Integer days=appProperties.getCommandes_last();
-
+        LocalDate tenDaysAgo = LocalDate.now().minusDays(appProperties.getCommandes_last());
 
         // Retrieve commands from the last 10 days
-        List<Commande> commandesLast10Days = commandedao.
+        List<Commande> commandesLast10Days = commandedao.findByDateAfter(tenDaysAgo);
 
         return commandesLast10Days;
 

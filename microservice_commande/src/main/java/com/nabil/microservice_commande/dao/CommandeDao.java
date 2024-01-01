@@ -14,7 +14,7 @@ import java.util.List;
 @Repository
 public interface CommandeDao extends JpaRepository<Commande, Integer>{
 
-    @Query("SELECT c FROM Commande c WHERE c.date >= CURRENT_DATE - 10")
+    @Query("SELECT c FROM Commande c WHERE c.date >= :date")
     List<Commande> findByDateAfter(LocalDate date);
 }
 

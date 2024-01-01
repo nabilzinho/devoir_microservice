@@ -23,6 +23,7 @@ public class CommandeController implements HealthIndicator {
     @GetMapping(value = "/Commandes")
     public List<Commande> listeDesCommandes() throws CommandeNotFoundException {
         System.out.println(" ********* CommandeController listeDesCommandes() ");
+        System.out.println(appProperties.getCommandes_last());
         List<Commande> Commandes = commandedao.findAll();
         if (Commandes.isEmpty())
             throw new CommandeNotFoundException("Aucun Commande n'est disponible à la vente");

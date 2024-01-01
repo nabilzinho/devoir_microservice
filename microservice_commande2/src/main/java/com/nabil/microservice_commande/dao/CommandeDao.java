@@ -14,7 +14,8 @@ import java.util.List;
 //Tout comme @Component, elle permet de déclarer auprès de Spring qu’une classe est un bean à exploiter.
 @Repository
 public interface CommandeDao extends JpaRepository<Commande, Integer>{
-
+    @Query("SELECT c FROM Commande c WHERE c.date >= :date")
+    List<Commande> findByDateAfter(LocalDate date);
 
 }
 
