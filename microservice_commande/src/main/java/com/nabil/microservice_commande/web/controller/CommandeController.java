@@ -48,7 +48,7 @@ public class CommandeController implements HealthIndicator {
         commandedao.deleteById(id);
     }
 
-    @PostMapping(value = "/AjouterCommande")
+    @PostMapping(value = "/Commandes")
     public Commande ajouterCommande(@RequestBody Commande newCommande) {
         System.out.println(" ********* CommandeController ajouterCommande(@RequestBody Commande newCommande) ");
 
